@@ -30,8 +30,10 @@ app.use(
 
 app.use(express.json());
 
+//route file
+const userRouter = require("./routes/users.routes");
 // initialize routes
-app.use("/users", require("./routes/users.routes"));
+app.use("/api/users", userRouter);
 
 // middleware for error responses
 app.use(errors.errorHandler);
